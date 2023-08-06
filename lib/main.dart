@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterwebscraping/providers/provider.dart';
 import 'package:flutterwebscraping/screens/homePage.dart';
+import 'package:provider/provider.dart';
 
 /// Ce projet consiste à faire un monitoring des emplois publiés par les partenaires d'une entreprises
 /// afin d'augmenter la performance commerciale de la société.
@@ -21,18 +23,21 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        iconTheme: IconThemeData(
-          size: 100,
-          color: Colors.amberAccent,
+    return ChangeNotifierProvider(
+      create: (context) => IndeedJobsProvider(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          iconTheme: IconThemeData(
+            size: 100,
+            color: Colors.amberAccent,
+          ),
+          scaffoldBackgroundColor: Colors.white,
+          useMaterial3: true,
         ),
-        scaffoldBackgroundColor: Colors.red,
-        useMaterial3: true,
+        home: HomePage(),
       ),
-      home: HomePage(),
     );
   }
 }

@@ -46,3 +46,23 @@ class Job {
     };
   }
 }
+
+class JobsIndeed {
+  final String jobtitle;
+  final String companyName;
+  final String location;
+
+  JobsIndeed({
+    required this.jobtitle,
+    required this.companyName,
+    required this.location,
+  });
+
+  factory JobsIndeed.fromJson(Map<String, dynamic> json) {
+    return JobsIndeed(
+      jobtitle: json['jobtitle'],
+      companyName: json['companyName'],
+      location: json['location'],
+    );
+  }
+}

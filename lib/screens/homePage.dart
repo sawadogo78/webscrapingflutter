@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterwebscraping/screens/firstafter_login.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +30,13 @@ class HomePage extends StatelessWidget {
                   textColor: Colors.white,
                   color: Colors.blue[900],
                   elevation: 2,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return Dashboard1();
+                      },
+                    ));
+                  },
                   child: Text('Login'),
                 ),
               ),
